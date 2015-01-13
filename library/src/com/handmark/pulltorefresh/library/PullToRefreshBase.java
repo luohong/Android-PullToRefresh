@@ -144,10 +144,12 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
 	@Override
 	public final boolean demo() {
 		if (mMode.showHeaderLoadingLayout() && isReadyForPullStart()) {
-			smoothScrollToAndBack(-getHeaderSize() * 2);
+//			smoothScrollToAndBack(-getHeaderSize() * 2);
+			smoothScrollTo(-getHeaderSize() * 3 / 2);// 不自动返回
 			return true;
 		} else if (mMode.showFooterLoadingLayout() && isReadyForPullEnd()) {
-			smoothScrollToAndBack(getFooterSize() * 2);
+//			smoothScrollToAndBack(getFooterSize() * 2);
+			smoothScrollTo(getFooterSize() * 3 / 2);// 不自动返回
 			return true;
 		}
 
